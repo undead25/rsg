@@ -1,0 +1,16 @@
+{
+  "name": "rsg",
+  "version": "0.0.1-alpha0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "rsg": "bin/rsg.js"
+  },
+  "author": "undead25",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "commander": "^2.11.0",
+    "inquirer": "^3.3.0"
+  }
+}
