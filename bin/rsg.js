@@ -39,9 +39,11 @@ const flow = () => {
   });
 }
 
-if (process.argv.length < 3) flow();
+// if (process.argv.length < 3) flow();
 
-commander
-  .version(pkg.version)
-  .option('-v', 'version', () => console.log(pkg.version))
-  .parse(process.argv);
+// commander
+//   .version(pkg.version)
+//   .option('-v', 'version', () => console.log(pkg.version))
+//   .parse(process.argv);
+
+const clone = require('../lib/clone');
