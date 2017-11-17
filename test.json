@@ -1,6 +1,0 @@
-{
-  "name": "abc",
-  "author": "leo",
-  {if ts}
-  "ts": "true"
-}
