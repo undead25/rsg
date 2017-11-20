@@ -47,7 +47,7 @@ const prompt = async (files, metalsmith, done) => {
         message: 'Using Less for style?'
       });
 
-      await metalsmith.metadata({typescript, sass, less});
+      await metalsmith.metadata({ ...metalsmith.metadata(), typescript, sass, less });
       done();
     } else {
       ora().info('Woking in progress & thanks for your intention!')
