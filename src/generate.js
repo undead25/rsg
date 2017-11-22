@@ -85,26 +85,6 @@ const init = async (files, metalsmith, done) => {
     if (framework === 'React') {
       // @todo clone appropriate repo
       done();
-      // const { typescript } = await inquirer.prompt({
-      //   type: 'confirm',
-      //   name: 'typescript',
-      //   message: 'Using TypeScript?'
-      // });
-
-      // const { sass } = await inquirer.prompt({
-      //   type: 'confirm',
-      //   name: 'sass',
-      //   message: 'Using Sass for style?'
-      // });
-
-      // const { less } = await inquirer.prompt({
-      //   type: 'confirm',
-      //   name: 'less',
-      //   message: 'Using Less for style?'
-      // });
-
-      // await metalsmith.metadata({ ...metalsmith.metadata(), typescript, sass, less });
-      // done();
     } else {
       ora().info('Woking in progress & thanks for your intention!');
       done();
@@ -112,16 +92,27 @@ const init = async (files, metalsmith, done) => {
   };
 };
 
-const questions = (files, metalsmith, done) => {
-  const { prompts } = metalsmith.metadata();
-  console.log(prompts)
+const questions = async (files, metalsmith, done) => {
+  const metadata = metalsmith.metadata();
+  const { prompts } = metadata;
   !prompts && done();
-  Object.keys(prompts).forEach(prompt => {
-    const { type, message } = prompts[prompt];
-    inquirer.prompt({
-      type, message, name: prompt
-    });
+
+  let data = [];
+  Object.keys(prompts).forEach(name => {
+    const { type, message } = prompts[name];
+    let inputVal;
+    name === 'name' && (inputVal = 'abc');
+    name === 'author' && (inputVal = getUser());
+    name === 'description' && (inputVal = 'abc');
+
+    let options = { type, message, name }
+    type === 'input' && (options.default = inputVal);
+    data.push({ ...options });
   });
+
+  const answers = await inquirer.prompt(data);
+  metalsmith.metadata({ ...metadata, ...answers });
+  done();
 }
 
 const generate = () => {
