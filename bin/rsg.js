@@ -3,7 +3,7 @@ const commander = require('commander');
 const ora = require('ora');
 const chalk = require('chalk');
 
-const generate = require('../lib/generate');
+const rsg = require('../lib/rsg');
 const pkg = require('../package.json');
 let project;
 
@@ -25,4 +25,4 @@ if (!project) {
   process.exit(1);
 }
 
-generate();
+rsg(project);
