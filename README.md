@@ -14,10 +14,10 @@ Just working in progress, now supports simple React Apps.
 > Highly recommend you using [`create-react-app`](https://github.com/facebookincubator/create-react-app)
 
 - Webpack
-- Stype preprocess (such as `sass`, `less`)
+- Style preprocess (such as `sass`, `less`)
 - Developing with TypeScript
 - Linters (such as `eslint`, `stylelint`, `tslint`)
-- PostCSS with autoprefixer plugin for default
+- PostCSS with autoprefixer plugin by default
 
 ## Prerequisites
 - [Node](https://nodejs.org/en/) 7.x higher
