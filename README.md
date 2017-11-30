@@ -6,8 +6,13 @@ A CLI for reducing environment configuration during devloping!
 ## Why
 > As we all know that there are a lot of CLIs, including each official CLI.
 
+- Yeah, leaning. There are a lot of details which helps me review what I have got during do this repo.
+- Speed project initialization, instead of copy files from other own project.
+- Hope this repo can give you some sign for your own CLI tools
+
 ## Note
-Just working in progress, now supports simple React Apps.
+> If you use this, I'll say Thanks, But I highly recommend you do your own CLI
+*Just working in progress, now supports simple React Apps.*
 
 ## Features
 ### React
